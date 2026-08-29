@@ -1,22 +1,16 @@
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
-
--- 화면에 메시지를 띄우기 위한 GUI 생성
 local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "UpdateNoticeGui"
 screenGui.ResetOnSpawn = false
 screenGui.Parent = player:WaitForChild("PlayerGui")
-
 local textLabel = Instance.new("TextLabel")
 textLabel.Size = UDim2.new(1, 0, 1, 0)
-textLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0) -- 배경 검은색
-textLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- 글자 흰색
+textLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+textLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 textLabel.TextSize = 24
 textLabel.Font = Enum.Font.SourceSansBold
--- 영어 메시지 출력
-textLabel.Text = "체험 시간이 끝났습니다. 다 이용하시려면 구매를 해주세요^^"
+textLabel.Text = "체험 시간이 끝났습니다. 다시 이용하시려면 구매를 해주세요^^"
 textLabel.Parent = screenGui
-
--- 10초 동안 메시지를 보여준 후 강제로 게임 종료 (Kick)
-task.wait(10.0)
-player:Kick("\n\n체험 시간이 끝났습니다. 다 이용하시려면 구매를 해주세요^^")
+task.wait(3.0)
+player:Kick("\n\n체험 시간이 끝났습니다. 다시 이용하시려면 구매를 해주세요^^")
